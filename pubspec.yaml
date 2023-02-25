@@ -66,6 +66,7 @@ flutter:
     - images/lochin.png
     - images/mirjalol.png
     - images/ruziboy.png
+    - images/profill.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

@@ -42,16 +42,17 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor:Color.fromARGB(255, 87, 66, 125),
+
         drawer: Drawer(backgroundColor: Color.fromARGB(255, 113, 219, 191),
           child: Column(
             children: [
               Expanded(
-                flex: 3,
+                flex: 4,
                 child: Column(children: [
                   Container(
         decoration: BoxDecoration(
-          image: DecorationImage(image: AssetImage('images/profil.png'),
+          image: DecorationImage(image: AssetImage('images/profill.png'),
           fit: BoxFit.fill
           )),
                     width: 350,height: 150,
@@ -89,7 +90,7 @@ class _MyAppState extends State<MyApp> {
                 ),
               ),
               Expanded(
-                flex:13,
+                flex:18,
                 child: Container(color: Color.fromARGB(255, 119, 249, 160),
                 child: ListView(
                   children: [ Padding(
@@ -114,22 +115,50 @@ class _MyAppState extends State<MyApp> {
           title: Text('Telegram'),
           ),
           body: Container(
-              decoration: BoxDecoration(
-          image: DecorationImage(image: AssetImage('images/profil.png'),
-          fit: BoxFit.fill
-          )),
-            child: Column(
-            children: [
-              chat(('images/javohir.png'), 'Javohir Jalolov', 'Assalomu Alaykum                                   09:17',Icons.done_all),
-              chat(('images/adham.png'), 'Adham Niyozboyev', 'Qalesan Adham Yaxshimisan                  16:12', Icons.done), 
-              chat(('images/rustam.png'), 'Rustam  Safarov', 'Ha Borayabman                                          14:24',Icons.done_all), 
-              chat(('images/lochin.png'), 'Lochin  Rustamov', 'G`ayrat bir qarab yubor                              15:54',null),
-              chat(('images/mirjalol.png'), 'Mirjalol Akam', 'Vo alaykumassalom                                   20:18',null),
-              chat(('images/ruziboy.png'), 'Ro`ziboy Aka','Qandaysiz                                                    20:18',Icons.done),
-            ],
-          )
+            child: SingleChildScrollView(
+              child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                  TextButton(onPressed: (){}, child: Text('All')),
+                  Container(color: Colors.black,width: 1,height: 40,),
+                  TextButton(onPressed: (){}, child: Text('Secret')),
+                  Container(color: Colors.black,width: 1,height: 40,),
+                  TextButton(onPressed: (){}, child: Text('People')),
+                  Container(color: Colors.black,width: 1,height:40,),
+                  TextButton(onPressed: (){}, child: Text('Chat')),
+                  Container(color: Colors.black,width: 1,height:40,),
+                  TextButton(onPressed: (){}, child: Text('Channel')),
+                  Container(color: Colors.black,width: 1,height:40,),
+                  TextButton(onPressed: (){}, child: Text('Robot')),
+                ],),
+                Container(color: Colors.black,width: 500,height: 1,),
+                chat(('images/javohir.png'), 'Javohir Jalolov', 'Assalomu Alaykum                                   09:17',Icons.done_all),
+                Container(color: Colors.black,width: 500,height: 1,),
+                chat(('images/adham.png'), 'Adham Niyozboyev', 'Qalesan Adham Yaxshimisan                  16:12', Icons.done), 
+                Container(color: Colors.black,width: 500,height: 1,),
+                chat(('images/rustam.png'), 'Rustam  Safarov', 'Ha Borayabman                                          14:24',Icons.done_all), 
+                Container(color: Colors.black,width: 500,height: 1,),
+                chat(('images/lochin.png'), 'Lochin  Rustamov', 'G`ayrat bir qarab yubor                              15:54',null),
+                Container(color: Colors.black,width: 500,height: 1,),
+                chat(('images/mirjalol.png'), 'Mirjalol Akam', 'Vo alaykum assalom                                  20:18',null),
+                Container(color: Colors.black,width: 500,height: 1,),
+                chat(('images/ruziboy.png'), 'Ro`ziboy Aka','Qandaysiz                                                    20:18',Icons.done),
+                Container(color: Colors.black,width: 500,height: 1,),
+                chat(('images/ozod.png'), 'Ozodbek Uka','Assalomu Alaykum                                    12:45',null),
+                Container(color: Colors.black,width: 500,height: 1,),
+                chat(('images/nurbek.png'), 'Nurbek Aka','Assalomu Alaykum                                    17:13',Icons.done),
+                Container(color: Colors.black,width: 500,height: 1,),
+                chat(('images/diyor.png'), 'Diyor Aka','Joined Telegram                                        18:45',null),
+                Container(color: Colors.black,width: 500,height: 1,),
+                chat(('images/javlon.png'), 'Javlon Akam','Assalomu Alaykum                                    12:45',Icons.done),
+                Container(color: Colors.black,width: 500,height: 1,),
+               ],
+              ),
+            ) 
           ),
-          ),
-    );
-  }
-}
+         ),
+       );
+     }
+   } 
