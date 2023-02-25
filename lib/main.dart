@@ -9,12 +9,15 @@ class MyApp extends StatefulWidget {
 }
 class _MyAppState extends State<MyApp> {
  
- Widget chat (String image, String txt, ){
-  return ListView(
-    children:[ ListTile(
-      leading: CircleAvatar(backgroundImage: AssetImage(image),),
-      title: Text(txt),
-    ),]
+ Widget chat (String image, String txt,String sub , IconData? icon){
+  return ListTile(
+    onTap: () {
+      
+    },
+    leading: CircleAvatar(backgroundImage: AssetImage(image),),
+    title: Text(txt),
+    subtitle: Text(sub),
+    trailing: Icon(icon),
   );
  }
   Widget profil(String text ){
@@ -29,6 +32,7 @@ class _MyAppState extends State<MyApp> {
   Widget func(IconData icons ,String txt,){
     return  ListTile(
     onTap: () {
+      
     },
       leading: Icon(icons),
       title: Text(txt),
@@ -38,7 +42,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.green,
+        backgroundColor: Colors.white,
         drawer: Drawer(backgroundColor: Color.fromARGB(255, 113, 219, 191),
           child: Column(
             children: [
@@ -47,7 +51,7 @@ class _MyAppState extends State<MyApp> {
                 child: Column(children: [
                   Container(
         decoration: BoxDecoration(
-          image: DecorationImage(image: AssetImage('images/sevgii.png'),
+          image: DecorationImage(image: AssetImage('images/profil.png'),
           fit: BoxFit.fill
           )),
                     width: 350,height: 150,
@@ -109,11 +113,19 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: Text('Telegram'),
           ),
-          body: Container(child: 
-          Column(
+          body: Container(
+              decoration: BoxDecoration(
+          image: DecorationImage(image: AssetImage('images/profil.png'),
+          fit: BoxFit.fill
+          )),
+            child: Column(
             children: [
-              chat(('images/avatar.png'), 'shrsfbdbshkfjbvsjfbvsdfv'),
-              chat(('images/sevgii.png'), 'Love'),
+              chat(('images/javohir.png'), 'Javohir Jalolov', 'Assalomu Alaykum                                   09:17',Icons.done_all),
+              chat(('images/adham.png'), 'Adham Niyozboyev', 'Qalesan Adham Yaxshimisan                  16:12', Icons.done), 
+              chat(('images/rustam.png'), 'Rustam  Safarov', 'Ha Borayabman                                          14:24',Icons.done_all), 
+              chat(('images/lochin.png'), 'Lochin  Rustamov', 'G`ayrat bir qarab yubor                              15:54',null),
+              chat(('images/mirjalol.png'), 'Mirjalol Akam', 'Vo alaykumassalom                                   20:18',null),
+              chat(('images/ruziboy.png'), 'Ro`ziboy Aka','Qandaysiz                                                    20:18',Icons.done),
             ],
           )
           ),
